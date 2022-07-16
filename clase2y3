@@ -1,0 +1,275 @@
+                    //--- CLASE 2 ----
+//Condicionales
+
+/*if (true){
+    alert("Es true!!")
+}
+
+if (false){
+    alert("Es true!!")
+}
+
+
+
+let num = 300
+
+if (num > 150){ //SI....
+    alert("El número es mayor a 150")
+}else{ //SINO...
+    alert("El número es menor a 150")
+}
+
+let dato = true
+console.log("Tu dato es :" + dato)
+if (dato == true){
+    alert("Es true!!")
+}else{
+    alert("Es false!!")
+}
+
+
+dato = false
+console.log("Tu dato es :" + dato)
+if (dato == true){
+    alert("Es true!!")
+}else{
+    alert("Es false!!")
+}*/
+
+
+//Ejercicio 1
+// Bar >=18 para ingresar
+
+//let edad = prompt("Ingrese su edad")
+
+/*let edad = 18
+if (edad >= 18){
+    alert("Puede ingresar")
+}else{
+    alert("No puede ingresar")
+}
+
+
+if(edad > 18){ //si(....)
+    alert("Puede ingresar")
+}else if (edad < 18) {//SINO...SI (...)
+    alert("No puede ingresar")
+} else if (edad == 18){ //SINO SI (....)
+    alert("Tiene 18, puede ingresar")
+}else{ //SINO...
+    alert("No ingresó su edad")
+}
+
+
+// PARSEAR NÚMEROS
+let a = "10" //string
+
+console.log( a + 10 ) //concatena
+
+a = parseFloat(a) //Lo pasamos a INT
+
+console.log( a + 10 ) //SUMA
+
+FLOAT
+
+let a = 50 //string
+
+a = parseFloat(a) //Lo pasamos a FLOAT
+
+console.log( a + 10.40 ) //SUMA
+*/
+
+//Ej con prompt
+
+
+/*
+
+let edad = parseInt(prompt("Ingrese su edad")) //MODO CORRECTO
+//let edad = prompt(parseInt("Ingrese su edad")) EVITAR ESTE MODO
+
+if(edad > 18){ //si(....)
+    alert("Puede ingresar")
+}else if (edad < 18) {//SINO...SI (...)
+    alert("No puede ingresar")
+} else if (edad == 18){ //SINO SI (....)
+    alert("Tiene 18, puede ingresar")
+}else{ //SINO...
+    alert("No ingresó su edad")
+}
+
+*/
+
+
+//if (edad == 18) //un solo dato
+
+//AND && 
+//SE TIENEN QUE CUMPLIR TODAS LAS COND.
+
+// COLOR = blanco AND botones == true -> Control del aire
+
+/*
+let esBlanco = true
+let tieneboton = true
+if ( esBlanco && tieneboton ) //es Blanco Y si tiene botones
+
+
+
+//OR / O ||
+//SE TIENE UNA SOLA CONDICIÓN (TRUE) 
+let esBlanco = true
+let tieneboton = true
+if ( esBlanco || tieneboton ) //es Blanco O si tiene botones
+*/ 
+
+// Ejemplo de &&
+
+let nombreIngresado   = prompt("Ingresar nombre");
+let apellidoIngresado = prompt("Ingresar apellido");
+
+if((nombreIngresado !="") && (apellidoIngresado !="")){
+    alert("Nombre: "+ nombreIngresado + "\nApellido: "+apellidoIngresado); 
+    //      mje      +   variable     +     mje      +    variable
+}else{
+    alert("Error: Ingresar nombre y apellido");
+}
+
+
+
+// Ejemplo de && y || combinados
+let nombreIngresado   = prompt("Ingresar nombre");
+
+if((nombreIngresado !="") && ((nombreIngresado == "EMMA") || (nombreIngresado =="emma") || (nombreIngresado =="Emma"))){
+    //                    AND                              OR                            OR
+    alert("Hola Emma"); 
+}else{
+    alert("Error: Ingresar nombre valido");
+}
+
+
+
+if (( nombreIngresado != "") && ((nombreIngresado == "EMMA") || (nombreIngresado == "emma") || (nombreIngresado == "Emma") ) )
+//if((    1er comp         ) AND ( ( 2da comp )               OR  (3ra comp)                 or   (4ta comp)    )     ) 
+
+
+
+
+                                //-----CLASE 3 ----
+
+//INCREMENTO o DECREMENTO
+
+/*
+let num = 100
+console.log(num++) //101
+let num = 100
+console.log(num--) //99
+*/
+
+// ------FOR 
+// Mostrar un núm desde el 0 hasta el 10 
+//--- i=0       ;       ; +1 
+
+//for ( desde  ; hasta , incremento/decremento){ ... }
+
+
+//Opción 1 - de FOR declarando la cariable dentro
+
+for ( let inc = 0 ; inc <= 10 ; inc++) {
+    console.log("Tu número es: " + inc)
+}
+
+
+//Opción 2 - de FOR con una varable x fuera
+let i = 0
+for (i ; i < 5 ; i++){
+    alert (i)
+}
+
+
+
+
+//Ej de turnos con FOR
+for (let i = 1; i <= 20; i++) {
+    // En cada repetición solicitamos un nombre.
+    let ingresarNombre = prompt("Ingresar nombre");
+    // Informamos el turno asignado usando el número de repetición (i).
+    alert(" Turno  N° "+i+" Nombre: "+ingresarNombre);
+}
+
+
+//Ej de tablas con FOR
+
+// Solicitamos un valor al usuario
+let ingresarNumero = parseInt(prompt("Ingresar Numero")); //multiplica
+// En cada repetición, calculamos el número ingresado x el número de repetición (i)
+for (let i = 1; i <= 10; i++) { // i == dato que itera
+    let resultado = ingresarNumero * i ;
+    console.log( ingresarNumero + " X " , i , " = " , resultado)
+//                             2 x 1 = 2
+    alert(ingresarNumero +" X "+ i +" = "+ resultado);
+}
+
+
+//FOR con BREAK y CONTINUE
+
+for (let i = 1; i <= 10; i++) {
+    
+    let ingresarNombre = prompt("Ingresar nombre");
+    if( i == 5){
+        break; //corte
+        continue; // saltea
+    }
+    alert(" Turno  N° "+i+" Nombre: "+ingresarNombre);
+}
+
+//WHILE -> EVALÚA y luego HACE
+
+let entrada = prompt("Ingresar un dato");
+//Repetimos con While hasta que el usuario ingresa "ESC"
+while(entrada != "ESC" ){
+    alert("El usuario ingresó "+ entrada);
+    //Volvemos a solicitar un dato. En la próxima iteración se evalúa si no es ESC.
+    entrada = prompt("Ingresar otro dato");
+}
+
+
+// DO... WHILE -> HACE y luego Evalúa
+
+
+//Ejemplo 1 de DO.. WHILE
+let numero = 0;
+do{
+   //Repetimos con do...while mientras el usuario ingresa un n°
+   numero = prompt("Ingresar Número");
+   console.log(numero);
+//Si el parseo no resulta un número se interrumpe el bucle.   
+}while(parseInt(numero));
+
+//Ejemplo 2 de DO..WHILE 
+
+do {
+
+    alert("no ingresaste el primer numero!");
+    primerNumero = parseInt(prompt("ingresa nuevamente el primer numero:"));
+
+} while (isNaN(primerNumero))
+
+
+
+
+// SWITCH con un bucle
+let entrada = prompt("Ingresar un nombre");
+//Repetimos hasta que se ingresa "ESC"
+while(entrada != "ESC" ){
+   switch (entrada) {
+       case "ANA":
+            alert("HOLA ANA");
+            break;
+        case "Naty":
+            alert("HOLA Naty");
+            break;
+       default:
+           alert("¿QUIÉN SOS?")
+           break;
+   }
+   entrada = prompt("Ingresar un nombre");
+}
