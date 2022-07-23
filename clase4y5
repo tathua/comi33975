@@ -1,0 +1,192 @@
+//Funciones simples (Agregar cambios)
+/*function sumar (){
+   let num1 = prompt("ingrese un núm")
+   let num2 = prompt("ingrese un núm")
+   let suma = num1 + num2
+   alert(suma)
+}
+
+sumar();
+
+// funciones con parámetros (dato1,dato2, dato3)
+
+function mje (nombre , apellido){
+    alert(nombre + " " + apellido)
+}
+
+mje("Sal","Naty")
+mje("Enrique", "Palomino")
+
+function sumar (num1 , num2){
+    alert(num1+num2)
+}
+
+
+sumar(+prompt("Ingrese un num"),100)
+
+
+
+
+let nombre = "Juan" //global
+function hola(){
+    alert("Hola " + nombre)
+    alert ("Hola " + nombre2)
+}
+
+
+
+function chau(){
+    let nombre2 = "Carla" //local
+    alert ("Chau " + nombre)
+    alert ("Chau " + nombre2)
+       
+}
+
+chau()
+
+
+let nombre2= "Martín"
+
+
+//Ejemplo calcu
+function calculadora(primerNumero, segundoNumero, operacion) {
+    switch (operacion) {
+        case "+":
+             return primerNumero + segundoNumero;
+            
+            break;
+        case "-":
+             return primerNumero - segundoNumero;
+            break;
+        case "*":
+             primerNumero * segundoNumero;
+            break;
+        case "/":
+             primerNumero / segundoNumero;
+            break;
+        default:
+             0;
+            break;
+    }
+}
+let resultado = calculadora(200,5, "+")
+alert(resultado)
+alert(resultado + 10)
+
+
+
+
+
+function sumar (num1 , num2){ //func c/par. 
+    alert(num1+num2)
+}
+
+
+sumar(+prompt("Ingrese un num"),100)     
+
+const sumar = function (num1 , num2) {return num1 + num2}
+const sumar2 = function (num1 , num2) {return num1 + num2}
+//const restar = function (num1 , num2) {return num1 - num2}
+//const multi = function (num1 , num2) {return num1 * num2}
+
+alert(sumar(10,20))
+alert(sumar2(50,40))
+
+
+
+
+const sumar = function (num1 , num2) {return num1 + num2} //función anónima
+
+const sumar = (num1 , num2) => {return num1 + num2} //función flecha
+
+alert(sumar(10,20))
+
+const suma  = (a,b) => a + b
+const resta = (a,b) => a - b
+//Si una función es una sola línea con retorno y un parámetro puede evitar escribir los ()
+const iva   = x => x * 0.21
+let precioProducto  = 1500
+let descuento = 0 
+//Calculo el precioProducto + IVA - descuento
+let nuevoPrecio = resta(suma(precioProducto, iva(precioProducto)), descuento) 
+//                 resta (       (a=500 +       b=  ( 500*0.21))     -       50)
+
+console.log(nuevoPrecio)
+
+
+
+
+
+// clase 5 -------------
+
+const AnimalLeon = {
+    especie: "león",
+    patas: 4,
+    sexo: "M",
+    tipo: "carnivoro",
+}
+
+
+//const animal = { especie: "leon", patas: 4 .....}
+
+//alert(Animal.especie) //x propiedad
+console.log(Animal.patas)
+console.log(Animal["especie"])
+console.log(Animal) //todo junto
+
+Animal.especie = "Pato"
+Animal["patas"] = 2
+
+console.log(Animal.patas)
+console.log(Animal.especie)
+
+
+
+
+
+function Animal(especie,patas, sexo){
+    this.especie = especie;
+    this.patas = patas;
+    this.sexo = sexo;
+
+}
+
+const animal1 = new Animal ("león",4,"M");
+const animal2 = new Animal ("Pato",2, "F")
+
+
+
+
+let texto = "BienVeNidos/AS"
+alert(texto.length) //Cant. de carac.
+console.log(texto.toUpperCase())
+console.log(texto.toLowerCase())
+
+
+function Persona(nombre, edad, calle) {
+    this.nombre = nombre;
+    this.edad   = edad;
+    this.calle  = calle;
+    this.hablar = function(){ console.log("HOLA SOY "+ this.nombre)}
+}
+const persona1 = new Persona("Homero", 39, "Av. Siempreviva 742");
+const persona2 = new Persona("Marge", 36, "Av. Siempreviva 742");
+persona1.hablar();
+persona2.hablar();
+
+
+
+
+class Persona{
+    constructor(nombre, edad, calle) {
+        this.nombre = nombre;
+        this.edad   = edad;
+        this.calle  = calle;
+    }
+    hablar(){
+        console.log("HOLA SOY "+ this.nombre);
+    }
+}
+const persona1 = new Persona("Homero", 39, "Av. Siempreviva 742");
+persona1.hablar();
+*/
