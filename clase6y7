@@ -1,0 +1,374 @@
+/*
+//                         CLASE 6  ------  ARRAY -------
+let nombre ="Pablo"
+
+const nombres = ["Pablo" , "Marcos" , "Marta" ] 
+//                 0         1          2
+
+console.log(nombres[0])
+console.log(nombres[1])
+console.log(nombres[2])
+console.log(nombres[0]) //Undifined
+
+//Usar datos del array mediante índices
+const num = [10 , 20 , 30 , 40]
+let suma = num[0] + num[3]
+console.log(suma)
+let a = num[1]
+console.log(a)
+
+
+//for
+const num = [10 , 20 , 30 , 40, 50];
+//           0     1    2    3   4
+for (let index=0 ; index<5 ; index++){
+    alert(num[index])
+}
+
+//LENGHT
+const num = [10 , 20 , 30 , 40, 50];
+//alert(num.length)
+let cant = num.length
+alert(cant)
+
+//FOR usando lenght
+
+const num = [10 , 20 , 30 , 40, 50 , 60];
+//           0     1    2    3   4
+for (let index=0 ; index < num.length ; index++){
+    alert(num[index])
+}
+//Quitar y agregar elementos
+const num = [];
+
+num.push(52)
+num.push(552)
+num.push(5662)
+num.unshift(100)
+
+num.unshift(0)
+num.pop()
+num.shift()
+for (let index=0 ; index < num.length ; index++){
+    console.log(num[index])
+}
+
+//SPLICE
+const nombres = ['Rita', 'Pedro', 'Miguel', 'Ana', 'Vanesa'];
+//                  0       1        2        3       4
+nombres.splice(0,1)
+console.log(nombres)
+
+
+//SLICE
+
+const nombres    = ['Rita', 'Pedro', 'Miguel', 'Ana', 'Vanesa'];
+//                      0     1        2         3       4
+const masculinos = nombres.slice(1, 3); // Nuevo array desde la posición 1 a 3.
+console.log(nombres)
+console.log(masculinos)
+
+
+//JOIN
+const nombres    = ['Rita', 'Pedro', 'Miguel', 'Ana', 'Vanesa'];
+console.log(nombres.join(" - "))
+
+
+//CONCAT
+const perros   = ["Pupy", "Ronnie"];
+const gatos = ["Mishi", "Garfield", "Zuri"];
+const mascotas = perros.concat(gatos)
+const mascotas2 = gatos.concat(perros)
+console.log(mascotas)
+console.log(mascotas2)
+
+
+//INDEXOF
+const nombres = ['Rita', 'Rita', 'Pedro', 'Miguel', 'Ana', 'Vanesa'];
+
+console.log( nombres.indexOf('Juan') ) // ⇒ 0
+
+//INCLUDES
+const nombres = ['Rita', 'Rita', 'Pedro', 'Miguel', 'Ana', 'Vanesa'];
+
+console.log( nombres.includes('Juan') ) 
+
+
+//REVERSE
+const nombres = ['Rita', 'Rita', 'Pedro', 'Miguel', 'Ana', 'Vanesa'];
+console.log(nombres)
+console.log(nombres[0])
+nombres.reverse()
+console.log(nombres)
+console.log(nombres[0])
+nombres.reverse()
+console.log(nombres)
+console.log(nombres[0])
+
+
+
+//EJEMPLO 1 :
+
+//Declaraciòn de array vacío y variable para determinar cantidad
+const listaNombres = []; //Array vacío
+let   cantidad     = 5; //hasta cuanto
+
+//Empleo de do...while para cargar nombres en el array por prompt()
+do{
+   let entrada = prompt("Ingresar nombre");
+   listaNombres.push(entrada.toUpperCase());
+   console.log(listaNombres.length);
+}while(listaNombres.length != cantidad)
+
+
+
+//Concatenamos un nuevo array de dos elementos
+const nuevaLista = listaNombres.concat(["ANA","EMMA"]);
+//Salida con salto de línea usando join
+alert(nuevaLista.join("\n"));
+
+//EJEMPLO 2
+const nombres = ['Rita', 'Pedro', 'Miguel', 'Ana', 'Vanesa']
+
+// recibo el elemento a borrar por parámetro
+const eliminar = (nombre) => {
+    // busco su índice en el array
+    let index = nombres.indexOf(nombre)
+
+     // si existe, o sea es distinto a -1, lo borro con splice
+    if (index != -1 ) {
+        nombres.splice(index, 1)
+    } 
+}
+
+eliminar('juan')
+console.log(nombres)
+
+
+// ARRAy + OBJ
+
+
+const Productos = [{ id: 1, producto: "Arroz" },
+                  { id: 2,  producto: "Fideo" },
+                  { id: 3,  producto: "Pan" }];
+
+for (const producto of Productos) {
+    
+    console.log(producto.producto);
+}
+
+
+class Producto {
+    constructor(nombre, precio) {
+        this.nombre  = nombre.toUpperCase();
+        this.precio  = parseFloat(precio);
+        this.vendido = false;
+    }
+    sumaIva() {
+        this.precio = this.precio * 1.21;
+    }
+}
+
+
+//Declaramos un array de productos para almacenar objetos
+const productos = [];
+productos.push(new Producto("arroz", "125"));
+productos.push(new Producto("fideo", "70"));
+productos.push(new Producto("pan", "50"));
+//Iteramos el array con for...of para modificarlos a todos
+for (const producto of productos){
+    producto.sumaIva();
+}
+    console.log(productos)
+
+    */
+
+// ------------- Clase 7 - FUNCIONES DE ORDEN SUPERIOR
+/*
+function mayorQue(n) {
+    return (m) => m > n
+    //            120 > 100
+}
+
+let mayorQueCien = mayorQue(100) //n
+//let mayorQueCinco = mayorQue(5)
+
+console.log( mayorQueCien(120) )  // m
+console.log( mayorQueCien(8) )  //  
+//console.log(mayorQueCinco(100))
+
+
+
+
+function asignarOperacion(op) {
+    if (op == "sumar") {
+        //       (op)
+        return (a, b) => a + b
+        //      40,60    40+60            
+    } else if (op == "restar") {
+        return (a, b) => a - b
+             //  5,3       5-3
+    }
+}
+
+let suma = asignarOperacion("sumar")
+let resta = asignarOperacion("restar")
+
+
+console.log( suma(40, 60) )  //  10
+console.log( resta(5, 3) )  //  2
+
+
+function porCadaUno(arr, fn) {
+    for (const el of arr) {
+        fn(el)
+    }
+}
+const numeros= [1, 2, 3, 4]
+
+porCadaUno(numeros, console.log)
+// 1
+// 2
+// 3
+// 4
+
+let total = 0
+
+function acumular(num) {
+    total += num
+}
+
+porCadaUno(numeros, acumular)
+console.log(total) // 10
+
+
+const duplicado = []
+
+porCadaUno(numeros, (el)=> {
+    duplicado.push(el * 2)
+})
+
+console.log(duplicado) // [2, 4, 6, 8]
+
+
+// FOR EACH
+const numeros = [1, 2, 3, 4, 5, 6]
+
+numeros.forEach( (num)=> {
+    console.log(num)
+} )
+
+
+//FIND
+const cursos = [
+    {nombre: 'Javascript', precio: 15000},
+    {nombre: 'ReactJS', precio: 22000},
+]
+
+const resultado = cursos.find((el) => el.nombre === "ReactJS")
+const resultado2 = cursos.find((el) => el.nombre === "DW")
+const resultado3 = cursos.find((el) => el.precio === 15000)
+
+console.log(resultado) // {nombre: 'ReactJS', precio: 22000}
+console.log(resultado2) // undefined
+console.log(resultado3)
+
+
+const cursos = [
+    {nombre: 'Javascript', precio: 5000},
+    {nombre: 'ReactJS', precio: 2000},
+    {nombre: 'AngularJS', precio: 22000},
+    {nombre: 'Desarrollo Web', precio: 6000},
+]
+
+const resultado = cursos.filter((el) => el.nombre.includes('JS'))
+const resultado2 = cursos.filter((el) => el.precio < 14000)
+
+console.log(resultado)
+ [
+    {nombre: 'ReactJS', precio: 22000},
+    {nombre: 'Angular', precio: 22000}
+] 
+
+console.log(resultado2) // []
+
+console.log( cursos.some((el) => el.nombre == "Desarrollo Web")) 
+// true
+console.log( cursos.some((el) => el.nombre == "VueJS")) 
+// false
+
+
+const cursos = [
+    {nombre: 'Javascript', precio: 15000},
+    {nombre: 'ReactJS', precio: 22000},
+    {nombre: 'AngularJS', precio: 22000},
+    {nombre: 'Desarrollo Web', precio: 16000},
+]
+
+const nombres = cursos.map((x) => x.nombre)
+console.log(nombres)
+// [ 'Javascript', 'ReactJS', 'AngularJS', 'Desarrollo Web' ]
+
+
+const actualizado = cursos.map((el) => {
+    return {
+        nombre: el.nombre,
+        precio: el.precio * 1.25
+    }
+})
+
+console.log(actualizado)
+/* [
+     { nombre: 'Javascript', precio: 18750 },
+     { nombre: 'ReactJS', precio: 27500 },
+     { nombre: 'AngularJS', precio: 27500 },
+     { nombre: 'Desarrollo Web', precio: 20000 }
+] 
+
+const numeros = [1, 2, 3, 4, 5, 6]
+const total = numeros.reduce((acumulador, elemento) => acumulador + elemento, 10)
+
+console.log(total) // 21
+
+
+const miCompra = [
+    { nombre: 'Desarrollo Web', precio: 20000 },
+    { nombre: 'Javascript', precio: 18750 },
+    { nombre: 'ReactJS', precio: 27500 }
+]
+
+const total = miCompra.reduce((acc, el) => acc + el.precio,  60000)
+console.log(total) // 66250
+
+
+console.log( Math.E ) // 2.718281828459045
+console.log( Math.PI ) // 3.141592653589793
+
+console.log( Math.max(55, 13, Infinity, -25, 93, 4) ) // 93
+console.log( Math.min(55, 13, 0, -25, -Infinity, 4) ) // -25
+
+const pi = Math.PI // 3.141592653589793
+
+// CEIL: devuelve el entero mayor o igual más próximo
+console.log( Math.ceil(pi) ) // 4
+
+// FLOOR: devuelve el entero más cercano redondeando hacia abajo
+console.log( Math.floor(pi) ) // 3
+
+// ROUND: retorna el valor de un número redondeado al entero más cercano
+console.log( Math.round(pi) ) // 3
+*/
+ 
+// números entre 0 y 10
+console.log( Math.random() * 10 )
+// números entre 0 y 50
+console.log( Math.random() * 50)
+// números entre 20 y 50
+console.log( Math.random() * 30 + 20 )
+
+const generadorNumero = () => {
+    return Math.round( Math.random() * 100 )
+}
+
+console.log( generadorNumero() )
+console.log( new Date() )
